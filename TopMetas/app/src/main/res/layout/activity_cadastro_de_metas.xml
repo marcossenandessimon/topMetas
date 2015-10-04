@@ -11,10 +11,11 @@
         <ImageView
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:id="@+id/imageView"
+            android:id="@+id/confirm"
             android:src="@drawable/confirm"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="480dp" />
+
     </FrameLayout>
 
     <ScrollView
@@ -28,47 +29,49 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/horaTotal"
+                android:id="@+id/edit_text_tempo"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:textColor="#fff" />
+                android:textColor="#fff"
+                android:textSize="50dp" />
 
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/descricao"
+                android:id="@+id/edit_text_descricao"
                 android:hint="Descrição"
                 android:textColor="#fff"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="15dp"
+                android:textColorHint="#757575" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp">
+                android:layout_gravity="center_horizontal"
+                android:weightSum="1">
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="date"
                     android:ems="10"
-                    android:id="@+id/dataFinal"
+                    android:id="@+id/edit_text_dataFinal"
                     android:textColor="#fff"
-                    android:layout_marginLeft="10dp" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.40" />
 
                 <EditText
-                    android:layout_width="81dp"
+                    android:layout_width="61dp"
                     android:layout_height="wrap_content"
                     android:inputType="time"
                     android:ems="10"
-                    android:id="@+id/horaFinal"
+                    android:id="@+id/edit_text_horaFinal"
                     android:textColor="#fff"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="5dp" />
+                    android:layout_marginLeft="50dp" />
             </LinearLayout>
 
         </LinearLayout>
