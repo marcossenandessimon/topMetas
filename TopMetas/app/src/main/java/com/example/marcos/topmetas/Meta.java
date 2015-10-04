@@ -14,5 +14,11 @@ public class Meta {
         super();
     }
 
-
+    public Meta(Date dataFim, int id, String descricao, int tempo, int porcentagem) {
+        this.dataFim = dataFim;
+        this.id = id;
+        this.descricao = descricao;
+        this.tempo = tempo;
+        this.porcentagem = porcentagem;
+    }
 }
