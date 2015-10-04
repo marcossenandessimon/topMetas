@@ -1,0 +1,12 @@
+cadastro de meta
+	descrição
+	data limite
+	quantidade de horas
+	
+
+listagem de metas concluidas e em abertas
+seleção de meta - iniciar meta
+cronometro
+
+porcentagem da meta ja cumprida
+
