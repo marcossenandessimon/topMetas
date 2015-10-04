@@ -16,6 +16,12 @@
         android:textColor="#FFFFFF"
         android:padding="10dp"
         android:text="Listagem de fotos"
-        android:background="#336699" />
+        android:autoText="false" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/editar" />
 
 </LinearLayout>
