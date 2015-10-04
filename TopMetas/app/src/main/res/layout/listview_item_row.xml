@@ -4,8 +4,10 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="10dp"
-    android:background="#202233">
+    android:background="#202233"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,7 +31,8 @@
             android:progress="50"
             android:max="100"
             android:layout_weight="1.00"
-            android:indeterminate="false" />
+            android:indeterminate="false"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,7 +42,8 @@
             android:id="@+id/porcentagem"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:hint="100%" />
+            android:hint="100%"
+            android:layout_marginRight="5dp" />
     </LinearLayout>
 
 </LinearLayout>

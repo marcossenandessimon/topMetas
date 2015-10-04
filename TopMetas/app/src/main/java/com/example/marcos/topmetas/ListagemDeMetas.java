@@ -3,8 +3,11 @@ package com.example.marcos.topmetas;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.Date;
@@ -23,13 +26,36 @@ public class ListagemDeMetas extends ActionBarActivity {
 
         Meta [] metas = new Meta[]{
                 new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 100),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 100),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
+                new Meta(new Date(new Date().getTime()+1000), 10, "ler livro", 50, 50),
                 new Meta(new Date(new Date().getTime()+2000), 20, "comer", 50, 25)
         };
 
         final MetaAdapter adapter = new MetaAdapter(this,  R.layout.listview_item_row, metas);
 
         listaMetas = (ListView) findViewById(R.id.listagem_metas);
-        /*
+        listaMetas.setAdapter(adapter);
+/*
+        listaMetas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Meta item = (Meta) adapter.getItem(position);
+                Log.v("App", "Item Clicado:");
+                Log.v("App", item.descricao);
+            }
+        });
+
 
          Fotos fotos_data[] = new Fotos[]
                 {
@@ -47,8 +73,6 @@ public class ListagemDeMetas extends ActionBarActivity {
 
         listView1 = (ListView)findViewById(R.id.listView_exemplo);
 
-        //View header = (View)getLayoutInflater().inflate(R.layout.listview_header_row, null);
-        //listView1.addHeaderView(header);
 
         listView1.setAdapter(adapter);
 

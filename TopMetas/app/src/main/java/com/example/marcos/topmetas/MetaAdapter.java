@@ -10,9 +10,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+
 
 public class MetaAdapter extends ArrayAdapter<Meta> {
 
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("H:m dd/MM/yyyy");
     Context context;
     int layoutResourceId;
     Meta metas[] = null;
@@ -43,11 +46,10 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
             holder = (MetaHolder) row.getTag();
         }
 
-
         Meta meta = metas[position];
-        holder.dataFinal.setText(meta.dataFim.toString());
+        holder.dataFinal.setText(DATE_FORMAT.format(meta.dataFim));
         holder.progressBar.setProgress(meta.porcentagem);
-        holder.porcentagem.setText(meta.porcentagem);
+        holder.porcentagem.setText(meta.porcentagem + "%");
 
         return row;
     }
