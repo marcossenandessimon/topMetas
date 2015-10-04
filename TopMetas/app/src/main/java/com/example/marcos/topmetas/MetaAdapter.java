@@ -24,8 +24,9 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
         this.context = context;
         this.metas = metas;
     }
-
-    /*@Override
+/*
+    @Override
+>>>>>>> 9e4f69538175056b024b9cdea5fb73a434f213ef
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
         MetaHolder holder = null;
