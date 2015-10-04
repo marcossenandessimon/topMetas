@@ -37,6 +37,8 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
             row = inflater.inflate(layoutResourceId, parent, false);
 
             holder = new MetaHolder();
+            holder.descricao = (TextView) row.findViewById(R.id.descricao_meta);
+            holder.botaoPlay = (ImageView) row.findViewById(R.id.img_dar_play);
             holder.dataFinal = (TextView) row.findViewById(R.id.dataFinal);
             holder.progressBar = (ProgressBar) row.findViewById(R.id.progressBar);
             holder.porcentagem = (TextView) row.findViewById(R.id.porcentagem);
@@ -46,7 +48,26 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
             holder = (MetaHolder) row.getTag();
         }
 
+
+        //19  to 17
+
         Meta meta = metas[position];
+        String descricao = meta.descricao;
+
+        if (descricao.length() >= 15) {
+            descricao = descricao.substring(0, 15) + "...";
+        }
+
+        holder.botaoPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(this, clase.class);
+                
+
+            }
+        });
+
+        holder.descricao.setText(descricao);
         holder.dataFinal.setText(DATE_FORMAT.format(meta.dataFim));
         holder.progressBar.setProgress(meta.porcentagem);
         holder.porcentagem.setText(meta.porcentagem + "%");
@@ -55,6 +76,8 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
     }
 
     static class MetaHolder {
+        TextView descricao;
+        ImageView botaoPlay;
         TextView dataFinal;
         ProgressBar progressBar;
         TextView porcentagem;

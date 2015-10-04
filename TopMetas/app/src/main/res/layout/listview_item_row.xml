@@ -7,7 +7,40 @@
     android:background="#202233"
     android:paddingLeft="10dp"
     android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:paddingBottom="10dp"
+    android:paddingRight="5dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="#202233"
+        android:weightSum="1"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="7dp">
+
+        <TextView
+            android:id="@+id/descricao_meta"
+            android:layout_width="273dp"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="#FFFFFF"
+            android:text="descricao da meta"
+            android:autoText="false"
+            android:layout_weight="0.92"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/img_dar_play"
+            android:src="@drawable/editar"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,30 +53,30 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:weightSum="1">
 
         <ProgressBar
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/progressBar"
             android:progress="50"
             android:max="100"
             android:layout_weight="1.00"
             android:indeterminate="false"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="100%"
             android:id="@+id/porcentagem"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:hint="100%"
-            android:layout_marginRight="5dp" />
+            android:hint="100%" />
     </LinearLayout>
 
 </LinearLayout>
