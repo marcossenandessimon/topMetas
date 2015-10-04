@@ -7,13 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
-/**
- * Created by Giovanni on 04/10/2015.
- */
+import java.text.SimpleDateFormat;
+
+
 public class MetaAdapter extends ArrayAdapter<Meta> {
 
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("H:m dd/MM/yyyy");
     Context context;
     int layoutResourceId;
     Meta metas[] = null;
@@ -24,7 +26,7 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
         this.context = context;
         this.metas = metas;
     }
-/*
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
@@ -35,24 +37,26 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
             row = inflater.inflate(layoutResourceId, parent, false);
 
             holder = new MetaHolder();
-            holder.imgIcon = (ImageView) row.findViewById(R.id.imgIcon);
-            holder.txtTitle = (TextView) row.findViewById(R.id.txtTitle);
+            holder.dataFinal = (TextView) row.findViewById(R.id.dataFinal);
+            holder.progressBar = (ProgressBar) row.findViewById(R.id.progressBar);
+            holder.porcentagem = (TextView) row.findViewById(R.id.porcentagem);
 
             row.setTag(holder);
         } else {
             holder = (MetaHolder) row.getTag();
         }
 
-
-        Fotos fotos = metas[position];
-        holder.txtTitle.setText(fotos.title);
-        holder.imgIcon.setImageResource(fotos.icon);
+        Meta meta = metas[position];
+        holder.dataFinal.setText(DATE_FORMAT.format(meta.dataFim));
+        holder.progressBar.setProgress(meta.porcentagem);
+        holder.porcentagem.setText(meta.porcentagem + "%");
 
         return row;
     }
 
     static class MetaHolder {
-        ImageView imgIcon;
-        TextView txtTitle;
-    }*/
+        TextView dataFinal;
+        ProgressBar progressBar;
+        TextView porcentagem;
+    }
 }
