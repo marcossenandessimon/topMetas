@@ -25,7 +25,7 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
         this.metas = metas;
     }
 
-    @Override
+    /*@Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
         MetaHolder holder = null;
@@ -49,7 +49,7 @@ public class MetaAdapter extends ArrayAdapter<Meta> {
         holder.imgIcon.setImageResource(fotos.icon);
 
         return row;
-    }
+    }*/
 
     static class MetaHolder {
         ImageView imgIcon;
